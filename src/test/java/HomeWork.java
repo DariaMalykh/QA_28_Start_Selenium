@@ -22,9 +22,11 @@ public class HomeWork {
         //by tag name
         WebElement button  =  wd.findElement(By.tagName("button"));
         WebElement button1 = wd.findElement(By.cssSelector("button"));
+        WebElement button3 = wd.findElement(By.xpath("//button"));
 
         WebElement a = wd.findElement(By.tagName("a"));
         WebElement a1 = wd.findElement(By.cssSelector("a"));
+        WebElement a3 = wd.findElement(By.xpath("//a"));
 
         List<WebElement> listA = wd.findElements(By.tagName("a"));
         List<WebElement> listA1 = wd.findElements(By.cssSelector("a"));
@@ -34,9 +36,11 @@ public class HomeWork {
 
         WebElement h1 = wd.findElement(By.tagName("h1"));
         WebElement h1_1 = wd.findElement(By.cssSelector("h1"));
+        WebElement h1_2 = wd.findElement(By.xpath("//h1"));
 
         WebElement input = wd.findElement(By.tagName("input"));
         WebElement input1 = wd.findElement(By.cssSelector("input"));
+        WebElement input3 = wd.findElement(By.xpath("//input"));
 
         List<WebElement> listInput = wd.findElements(By.tagName("input"));
         List<WebElement> listInput1 = wd.findElements(By.cssSelector("input"));
@@ -57,26 +61,45 @@ public class HomeWork {
         //by id
         WebElement divID = wd.findElement(By.id("root"));
         WebElement divID1 = wd.findElement(By.cssSelector("#root"));
+        WebElement divID2 = wd.findElement(By.xpath("//div[@id = 'root']"));
 
         //by attribute
         WebElement home = wd.findElement(By.cssSelector("[href ='/home']"));
+        WebElement home1 = wd.findElement(By.xpath("//*[@href = '/home']"));
+
         WebElement about = wd.findElement(By.cssSelector("[href ='/about']"));
+        WebElement about1 = wd.findElement(By.xpath("//*[@href = '/about']"));
+
         WebElement login = wd.findElement(By.cssSelector("[href ='/login']"));
+        WebElement login1 = wd.findElement(By.xpath("//*[@href = '/login']"));
+
         WebElement email = wd.findElement(By.cssSelector("[name =\"email\"]"));
+        WebElement email1 = wd.findElement(By.xpath("//*[@name = 'email']"));
+
         WebElement pas = wd.findElement(By.cssSelector("[name =\"password\"]"));
+        WebElement pas1 = wd.findElement(By.xpath("//*[@name = 'password']"));
 
         //start
         WebElement reg1 = wd.findElement(By.cssSelector("[name ^='reg']"));
-        WebElement pas1 = wd.findElement(By.cssSelector("[placeholder ^='Passw']"));
+        WebElement reg2 = wd.findElement(By.xpath("//*[starts-with(@name,'reg')]"));
+
+        WebElement pas2 = wd.findElement(By.cssSelector("[placeholder ^='Passw']"));
+        WebElement pas3 = wd.findElement(By.xpath("//*[starts-with(@placeholder,'Passw')]"));
 
         //end
-        WebElement email1 = wd.findElement(By.cssSelector("[placeholder $='ail']"));
-        WebElement reg2 = wd.findElement(By.cssSelector("[name $= \"registration\"]"));
+        WebElement email2 = wd.findElement(By.cssSelector("[placeholder $='ail']"));
+        WebElement reg3 = wd.findElement(By.cssSelector("[name $= \"registration\"]"));
 
         //contains
-        WebElement pas2 = wd.findElement(By.cssSelector("[placeholder *='assw']"));
-        WebElement pas3 = wd.findElement(By.cssSelector("[name *=\"ssword\"]"));
-        WebElement reg3 = wd.findElement(By.cssSelector("[name *= \"egistrat\"]"));
+        WebElement pas4 = wd.findElement(By.cssSelector("[placeholder *='assw']"));
+        WebElement pas5 = wd.findElement(By.xpath("//*[contains(@placeholder,'assw')]"));
+
+        WebElement pas6 = wd.findElement(By.cssSelector("[name *=\"ssword\"]"));
+        WebElement pas7 = wd.findElement(By.xpath("//*[contains(@name,'ssword')]"));
+
+        WebElement reg4 = wd.findElement(By.cssSelector("[name *= \"egistrat\"]"));
+        WebElement reg5 = wd.findElement(By.xpath("//*[contains(@name,'egistrat')]"));
+
 
 
 
