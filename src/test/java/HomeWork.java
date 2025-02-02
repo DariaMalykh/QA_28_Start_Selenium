@@ -19,6 +19,7 @@ public class HomeWork {
 
     @Test
     public void cssLocators() {
+        //by tag name
         WebElement button  =  wd.findElement(By.tagName("button"));
         WebElement button1 = wd.findElement(By.cssSelector("button"));
 
@@ -39,6 +40,45 @@ public class HomeWork {
 
         List<WebElement> listInput = wd.findElements(By.tagName("input"));
         List<WebElement> listInput1 = wd.findElements(By.cssSelector("input"));
+
+        //by class
+        WebElement divLogo = wd.findElement(By.className("navbar-component_nav__1X_4m"));
+        WebElement divLogo1 = wd.findElement(By.cssSelector(".navbar-component_nav__1X_4m"));
+
+        WebElement div = wd.findElement(By.className("container"));
+        WebElement div1 = wd.findElement(By.cssSelector(".container"));
+
+        WebElement divLogin = wd.findElement(By.className("active"));
+        WebElement divLogin1 = wd.findElement(By.cssSelector(".active"));
+
+        WebElement div2 = wd.findElement(By.className("login_login__3EHKB"));
+        WebElement div3 = wd.findElement(By.cssSelector(".login_login__3EHKB"));
+
+        //by id
+        WebElement divID = wd.findElement(By.id("root"));
+        WebElement divID1 = wd.findElement(By.cssSelector("#root"));
+
+        //by attribute
+        WebElement home = wd.findElement(By.cssSelector("[href ='/home']"));
+        WebElement about = wd.findElement(By.cssSelector("[href ='/about']"));
+        WebElement login = wd.findElement(By.cssSelector("[href ='/login']"));
+        WebElement email = wd.findElement(By.cssSelector("[name =\"email\"]"));
+        WebElement pas = wd.findElement(By.cssSelector("[name =\"password\"]"));
+
+        //start
+        WebElement reg1 = wd.findElement(By.cssSelector("[name ^='reg']"));
+        WebElement pas1 = wd.findElement(By.cssSelector("[placeholder ^='Passw']"));
+
+        //end
+        WebElement email1 = wd.findElement(By.cssSelector("[placeholder $='ail']"));
+        WebElement reg2 = wd.findElement(By.cssSelector("[name $= \"registration\"]"));
+
+        //contains
+        WebElement pas2 = wd.findElement(By.cssSelector("[placeholder *='assw']"));
+        WebElement pas3 = wd.findElement(By.cssSelector("[name *=\"ssword\"]"));
+        WebElement reg3 = wd.findElement(By.cssSelector("[name *= \"egistrat\"]"));
+
+
 
     }
     @AfterClass
