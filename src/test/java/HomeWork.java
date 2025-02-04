@@ -18,6 +18,41 @@ public class HomeWork {
     }
 
     @Test
+    public void classWork2(){
+        WebElement el = wd.findElement(By.cssSelector("[name = 'login']"));
+        String text = el.getText();//get from innerText
+        System.out.println(text);
+
+        WebElement form = wd.findElement(By.xpath("//form"));
+        String textForm = form.getText();
+        System.out.println("**************************");
+        System.out.println(textForm);
+    }
+    @Test
+    public void classWork(){
+        //parent
+        WebElement el = wd.findElement(By.xpath("//h1/parent::*"));
+        WebElement el1 = wd.findElement(By.xpath("//h1/parent::div"));
+        WebElement el2 = wd.findElement(By.xpath("//h1/.."));
+
+        //ancestor
+        WebElement el3 = wd.findElement(By.xpath("//h1/ancestor::*"));
+        WebElement el4 = wd.findElement(By.xpath("//h1/ancestor::div"));//two options
+        WebElement el5 = wd.findElement(By.xpath("//h1/ancestor::div[2]"));//one option
+
+        //ancestor - or - self
+        WebElement el6 = wd.findElement(By.xpath("//h1/ancestor-or-self::*"));
+        List<WebElement> list = wd.findElements(By.xpath("//h1/ancestor-or-self::*"));
+
+        //following-sibling
+        List<WebElement> list1 = wd.findElements(By.xpath("//h1/following-sibling::a"));
+
+        //preceding-sibling
+        WebElement h1 = wd.findElement(By.xpath("//a[last()]/preceding-sibling::h1"));
+        List<WebElement> list_a = wd.findElements(By.xpath("//a[3]/preceding-sibling::a"));
+    }
+
+    @Test
     public void cssLocators() {
         //by tag name
         WebElement button  =  wd.findElement(By.tagName("button"));
@@ -27,6 +62,8 @@ public class HomeWork {
         WebElement a = wd.findElement(By.tagName("a"));
         WebElement a1 = wd.findElement(By.cssSelector("a"));
         WebElement a3 = wd.findElement(By.xpath("//a"));
+        WebElement a4Login = wd.findElement(By.xpath("//a[3]"));
+
 
         List<WebElement> listA = wd.findElements(By.tagName("a"));
         List<WebElement> listA1 = wd.findElements(By.cssSelector("a"));
@@ -62,6 +99,9 @@ public class HomeWork {
         WebElement divID = wd.findElement(By.id("root"));
         WebElement divID1 = wd.findElement(By.cssSelector("#root"));
         WebElement divID2 = wd.findElement(By.xpath("//div[@id = 'root']"));
+
+        WebElement divID3 = wd.findElement(By.cssSelector("div#root.container"));
+        WebElement divID4 = wd.findElement(By.xpath("//div[@id = 'root' and @class = 'container']"));
 
         //by attribute
         WebElement home = wd.findElement(By.cssSelector("[href ='/home']"));
